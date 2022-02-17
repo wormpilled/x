@@ -1,0 +1,14 @@
+hello
+
+<script defer>
+  fetch('https://example.com/comments/this-is-the-path-of-my-article')
+    .then(response => {
+        if (response.ok) {
+          return response.text()
+        } else {
+          throw new Error('Something went wrong')
+        }
+      }).then(body => {
+      document.getElementById("comments-list").innerHTML = body
+    })
+</script>
